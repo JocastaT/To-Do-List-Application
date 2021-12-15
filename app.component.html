@@ -1,0 +1,55 @@
+<ion-app>
+    <ion-menu menuId="main-menu" content-id="main">
+
+        <ion-content>
+            <ion-item lines="none" style="height: 150px;">
+                <ion-avatar>
+                    <img src="https://st3.depositphotos.com/4111759/13425/v/600/depositphotos_134255710-stock-illustration-avatar-vector-male-profile-gray.jpg">
+                </ion-avatar>
+                <ion-label style="margin-left: 15px; margin-top: 50px; letter-spacing: 0.1ex; font-weight: 300; font-size:17px; color:grey; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{user.name}}</ion-label>
+            </ion-item>
+
+
+            <ion-menu-toggle>
+                <ion-item routerLink="/home">
+                    <ion-icon name="analytics-outline" slot="start"></ion-icon>
+                    <ion-label>All Tasks</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle style="--background:black;">
+                <ion-item style="--background: transparent; " routerLink="/home/tabs/calendar">
+                    <ion-icon name="calendar-outline" slot="start"></ion-icon>
+                    <ion-label>Calendar</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+                <ion-item routerLink="/completed">
+                    <ion-icon name="checkmark-done-outline" slot="start"></ion-icon>
+                    <ion-label>Completed Tasks</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+
+            <ion-menu-toggle>
+                <ion-item routerLink="/newemail">
+                    <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+                    <ion-label>Email</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+
+            <ion-menu-toggle>
+                <ion-item routerLink="/home/tabs/profile">
+                    <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+                    <ion-label>Profile</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+                <ion-item (click)="logout()">
+                    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+                    <ion-label>Logout</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"> </ion-router-outlet>
+</ion-app>

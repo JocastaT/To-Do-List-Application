@@ -1,0 +1,53 @@
+<ion-content class="ion-padding">
+    <ion-item lines="none" style="--background:transparent;">
+        <ion-back-button style=" color: wheat;" defaultHref="/home"></ion-back-button>
+    </ion-item>
+    <h1 style="margin-left: 10px; margin-top: 30px; font-size: 40px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:ivory;">Add Task</h1>
+
+    <ion-card style="margin-top: 30px; height: 600px;">
+        <ion-item style="--background:transparent; margin-top: 5px;">
+            <ion-label style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" position="floating">TITLE</ion-label>
+            <ion-input style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" required type="text" [(ngModel)]="title" name="title"></ion-input>
+        </ion-item>
+
+        <ion-item style="--background:transparent;">
+            <ion-label position="floating" style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">DESCRIPTION</ion-label>
+            <ion-textarea style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" required type="text" [(ngModel)]="desc" name="desc" rows="3" cols="15"></ion-textarea>
+        </ion-item>
+
+
+        <ion-item style="--background:transparent;">
+            <ion-label position="floating" style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">START TIME</ion-label>
+            <ion-datetime style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" required [(ngModel)]="startTime" name="startTime" displayFormat="DDD MMM DD YYYY HH:mm" pickerFormat="DDD MMM DD YYYY HH:mm"></ion-datetime>
+        </ion-item>
+
+        <ion-item style="--background:transparent;">
+            <ion-label position="floating" style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">END TIME</ion-label>
+            <ion-datetime style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" required [(ngModel)]="endTime" name="endTime" displayFormat="DDD MMM DD YYYY HH:mm" pickerFormat="DDD MMM DD YYYY HH:mm"></ion-datetime>
+        </ion-item>
+
+        <ion-item lines="none" style="--background:transparent;">
+            <ion-label style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRIORITY</ion-label>
+            <ion-select style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" required [(ngModel)]="priority" name="priority">
+                <ion-select-option style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" value="LOW">LOW</ion-select-option>
+                <ion-select-option style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" value="MIDDLE">MIDDLE</ion-select-option>
+                <ion-select-option style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" value="HIGH">HIGH</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item lines="none" style="--background:transparent;">
+            <ion-label style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CATEGORY</ion-label>
+            <span style="letter-spacing: 0.2ex; font-weight: 200; font-size:17px; color:white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{category}}</span>
+        </ion-item>
+
+        <ion-item style="--background:transparent;">
+            <ion-chip *ngFor="let taskcategory of categories; let i = index" (click)="selectedCategory(i)">
+                <ion-label style="color:white; font-size: 12px;">{{taskcategory}}</ion-label>
+            </ion-chip>
+        </ion-item>
+        <br><br>
+        <ion-button style="width: 50%; margin-left: 70px; --background:transparent; border: 1px solid white; border-radius: 30px;" expand="block" shape="round" (click)="addTask()">SAVE</ion-button>
+
+
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Weather</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="main">
+    <div class="details">
+        <h2><strong>Current Weather</strong></h2>
+        <p>Type city name</p>
+
+        <form [formGroup]="weatherForm" (ngSubmit)="search(weatherForm.value)">
+            <ion-input placeholder="Enter City Name, Ex. Paris" formControlName="city"></ion-input>
+
+            <button class="checkWeather" type="submit" [disabled]="!weatherForm.valid">
+				Submit
+			</button>
+        </form>
+        <div class="weather" *ngIf="weather">
+            <div>
+                <img [src]="weather.current.weather_icons[0]" />
+                <p class="big">{{weather.current.temperature}}°</p>
+                <p><strong>{{weather.current.weather_descriptions[0]}}</strong></p>
+            </div>
+            <div>
+                <p>
+                    {{weather.location.name}}, <span>{{weather.location.country}}</span>
+                </p>
+                <p>{{weather.location.localtime}}</p>
+            </div>
+        </div>
+    </div>
+</ion-content>

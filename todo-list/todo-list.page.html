@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar style="--background: #E9E9E9;">
+        <ion-title style="color: #a3a29f;">TASK LIST</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button style="margin-top: 4px;" menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+
+            <ion-button (click)="openPopover($event)" fill="clear" slot="end">
+                <ion-icon style="color: #5C5553;" name="options-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+
+    <ion-searchbar style="font-size: 0.1rem;  " placeholder='Try "Task 1"' [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+    </ion-searchbar>
+
+    <ion-card *ngFor="let todo of todos | filter:searchTerm " class="ion-margin">
+        <ion-card-header>
+            <ion-item lines="none" style="--background:transparent;">
+                <ion-icon *ngIf="todo.notification === 'not set'" (click)="getTime(todo.todoId)" style="margin-top: -10px; font-size: 17px; color: grey;" slot="end" name="notifications-off-outline"></ion-icon>
+                <ion-icon *ngIf="todo.notification === 'set'" (click)="getTime(todo.todoId)" style="margin-top: -10px; font-size: 17px; color: grey;" slot="end" name="notifications"></ion-icon>
+                <ion-icon (click)="email(todo.todoId)" style="margin-top: -10px; font-size: 17px; color: grey;" slot="end" name="arrow-redo"></ion-icon>
+                <ion-card-subtitle style="font-size: 14px;" [style.color]="todo.priority === 'HIGH' ? 'red' : (todo.priority === 'LOW' ? 'green' : 'orange') ">{{todo.category}}
+                </ion-card-subtitle>
+            </ion-item>
+
+            <ion-item style="--background: white;">
+                <ion-icon *ngIf="todo.priority === 'HIGH'" color="danger" size="small" name="ellipse"></ion-icon>
+                <ion-icon *ngIf="todo.priority === 'MIDDLE'" color="warning" size="small" name="ellipse"></ion-icon>
+                <ion-icon *ngIf="todo.priority === 'LOW'" color="success" size="small" name="ellipse"></ion-icon>
+
+                <ion-label style="margin-left: 10px;">{{todo.title}}</ion-label>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-label style="font-size:14px; ">Due {{todo.startTime | date:'fullDate'}}</ion-label>
+        </ion-card-content>
+        <ion-row>
+            <ion-item lines="none" style="--background: white;">
+                <ion-icon name="pencil-outline"></ion-icon>
+                <p (click)="edit(todo.todoId) ">Edit</p>
+            </ion-item>
+            <ion-item lines="none" style="--background: white; ">
+                <ion-icon name="checkmark-outline" [style.color]="todo.status === 'Incomplete' ? 'red' : (todo.status === 'Completed' ? 'green' : 'orange')"></ion-icon>
+                <p (click)="done(todo.todoId)" [style.color]="todo.status === 'Incomplete' ? 'red' : (todo.status === 'Completed' ? 'green' : 'orange')">{{todo.status}}</p>
+            </ion-item>
+            <ion-item lines="none" style="--background: white; ">
+                <ion-icon name="trash-outline" style="color: tomato;"></ion-icon>
+                <p (click)="delete(todo.todoId)" style="color: tomato;">Delete</p>
+            </ion-item>
+        </ion-row>
+
+    </ion-card>
+
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-right: 5px; margin-bottom: 10px;" (click)="addNewTask()">
+        <ion-fab-button style="--background: #5C5553;">
+            <ion-icon name=add></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+
+
+</ion-content>
