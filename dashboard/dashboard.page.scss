@@ -1,0 +1,39 @@
+    ion-toolbar {
+        --blackground: aquamarine;
+    }
+    
+    ion-content {
+        --background: linear-gradient(0deg, rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.1)), url("/assets/bg.jpg") no-repeat center center / cover;
+    }
+    
+    ion-card {
+        margin-top: 30px;
+        margin-left: 20px;
+        height: 150px;
+        width: 40%;
+        --background: linear-gradient(0deg, rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.349)), no-repeat center center / cover;
+        ion-label {
+            letter-spacing: 0.2ex;
+            font-weight: 200;
+            font-size: 18px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        ion-icon {
+            color: white;
+        }
+    }
+    
+    ion-item {
+        --background: transparent;
+        p {
+            color: white
+        }
+    }
+    
+    ion-button {
+        --background: red;
+        border-radius: 200%;
+        color: white;
+        width: 32px
+    }

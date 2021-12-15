@@ -1,0 +1,35 @@
+ion-avatar {
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 125px;
+}
+
+ion-content {
+    --background: linear-gradient(0deg, rgba(7, 6, 6, 0), rgba(12, 10, 10, 0.322)), url("/assets/profile1.jpg") no-repeat center center / cover;
+}
+
+ion-card {
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url("/assets/try2.jpeg") no-repeat center center / cover;
+    height: 46%;
+}
+
+ion-item {
+    --background: transparent;
+    ion-label {
+        color: white;
+        letter-spacing: 0.2ex;
+        font-weight: 200;
+        font-size: 17px;
+        color: #CECECE;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    ion-input {
+        color: white;
+        letter-spacing: 0.2ex;
+        font-weight: 200;
+        font-size: 17px;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}

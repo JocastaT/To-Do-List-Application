@@ -1,0 +1,13 @@
+{
+  "cordova-plugin-facebook4": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook4@^6.4.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "499503",
+      "APP_NAME": "todolistApp"
+    }
+  }
+}

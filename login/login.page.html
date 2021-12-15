@@ -1,0 +1,55 @@
+<ion-content class="ion-padding">
+
+    <div class="login-section ion-padding">
+        <div class="heading ion-padding">
+            <h2>Login</h2>
+            <h1>Welcome Todoist!</h1>
+            <p>Sign in to start tasking</p>
+        </div>
+
+        <div class="login-form ion-padding">
+            <div class="form-input">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-item style="--background: transparent; margin-top: -50px; ">
+                    <ion-label position="floating" style="color: #989898;">Enter Your Email</ion-label>
+                    <ion-input type="text" [(ngModel)]="email" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+                </ion-item>
+
+            </div>
+
+            <div class="form-input">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-item lines="none" style="--background: transparent; margin-top: -40px; ">
+                    <ion-label position="floating" style="color: #989898;">Enter Your Password</ion-label>
+                    <ion-input type="password" [(ngModel)]="password" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+                    <p class="forgot" (click)="forgot()">FORGOT PASSWORD?</p>
+
+
+                </ion-item>
+            </div>
+        </div>
+
+        <div class="action-button ion-padding">
+            <ion-button class="login-button" expand="block" shape="round" (click)="login()" style="margin-top:-40px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 200; letter-spacing: 1.5px;">
+                LOGIN</ion-button>
+            <p class="registerbtn">Don't have an Account? <a (click)="register()">Register Now!</a></p>
+            <p class="or">OR</p>
+            <ion-button expand="block" (click)="doLogin()" color="danger" *ngIf="!isGoogleLogin">
+                <ion-icon slot="start" name="logo-google"></ion-icon>
+                LogIn with Google
+            </ion-button>
+            <ion-button expand="block" (click)="facebookAuth()" color="danger">
+                <ion-icon slot="start" name="logo-facebook"></ion-icon>
+                Login with Facebook
+            </ion-button>
+
+
+
+
+
+        </div>
+
+    </div>
+</ion-content>

@@ -1,0 +1,81 @@
+ion-content {
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("/assets/todoBg.jpeg") no-repeat center center / cover;
+}
+
+.register-section {
+    height: 74vh;
+    width: 100%;
+    max-width: 500px;
+    background: #DFDBD8;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    border-top-left-radius: 46px;
+    border-top-right-radius: 46px;
+}
+
+.heading {
+    margin-top: 0px;
+    h1 {
+        margin-top: 100px;
+        color: #000000;
+        font-weight: bolder;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.7rem;
+    }
+    p {
+        margin-top: 2px;
+        color: #7b7b7b;
+        font-weight: 2000;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2rem;
+    }
+    h2 {
+        color: #fff;
+        font-weight: bolder;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        margin-top: -150px;
+    }
+}
+
+.register-form {
+    margin-top: -50px;
+    .form-input {
+        position: relative;
+        ion-item: part(native) {
+            padding-left: 0;
+        }
+        ion-icon {
+            position: absolute;
+            top: 34px;
+            z-index: 2;
+            font-size: 1.6rem;
+            left: 5px;
+        }
+        ion-label {
+            position: absolute;
+            margin-left: 35px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        ion-input {
+            font-size: 1.0rem;
+            --padding-start: 36px;
+            --padding-top: 36px;
+            color: #7b7b7b;
+        }
+    }
+}
+
+.action-button {
+    text-align: center;
+    ion-button {
+        --background: #CAC3C3;
+        margin-top: -10px;
+        margin-left: 50px;
+        width: 70%;
+        font-weight: bold;
+        shape: round;
+    }
+}

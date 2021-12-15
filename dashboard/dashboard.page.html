@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-toolbar style="--background:#556585;">
+
+        <ion-item style="--background:transparent" lines="none">
+            <ion-label style="font-weight:700; font-size: 1.8em; color: white; ">
+                Today
+                <p style="font-weight: 400;color:lightblue ;font-size: 0.5em; margin-top: 5px;">{{today | date:'fullDate'}}</p>
+                <img style="margin-left: 270px; margin-top: -200px; width: 80px; height:80px;" [src]="weather.current.weather_icons[0]" />
+                <p class="big" style="margin-left: 220px; margin-top: -70px; font-size: 30px;">{{weather.current.temperature}}°</p>
+
+
+            </ion-label>
+
+        </ion-item>
+        <ion-item lines="none" style="--background:transparent; width: 500px; margin-left: -5px; margin-top: -10px;">
+            <p>
+                {{weather.location.name}}, <span>{{weather.location.country}}</span>
+            </p>
+            <p style="margin-left: 10px;">{{weather.location.localtime}}</p>
+        </ion-item>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <div class="details">
+
+        <form [formGroup]="weatherForm" (ngSubmit)="search(weatherForm.value)">
+
+            <ion-item>
+                <ion-input style="margin-left: 20px;" placeholder="Enter City Name, Ex. Paris" formControlName="city"></ion-input>
+            </ion-item>
+
+            <p style="font-weight:700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 1.4em; color:white; margin-left: 20px;  ">
+                Welcome Back {{user.name}} to Todo.txt
+            </p>
+            <p style="font-weight:400; font-family:sans-serif; font-size: 1em; color:white; margin-left: 20px; margin-top: -20px; ">
+                You have {{todos.length}} tasks
+            </p>
+
+        </form>
+        <div class="weather" *ngIf="weather">
+        </div>
+    </div>
+
+    <ion-card>
+        <ion-card-content routerLink="/home">
+
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 0px;">
+
+                <ion-icon style="margin-left: 15px; margin-top: 10px; font-size: 40px;" name="clipboard-outline"></ion-icon>
+            </ion-item>
+
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 10px;">
+                <ion-label style="font-size: 13px;">My Tasks </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="margin-left: 200px; margin-top: -175px;">
+        <ion-card-content routerLink="/completed">
+
+            <ion-item detail="false" routerLink="/completed" lines="none" style="--background:transparent; margin-top: 0px;">
+                <ion-icon style="margin-left: 15px; margin-top: 10px; font-size: 40px;" name="checkmark-done-outline"></ion-icon>
+
+            </ion-item>
+
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 10px;">
+                <ion-label style="font-size: 13px;">Completed
+                </ion-label>
+
+            </ion-item>
+
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content routerLink="/add">
+
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 0px;">
+                <ion-icon style="margin-left: 15px; margin-top: 10px; font-size: 40px;" name="create-outline"></ion-icon>
+            </ion-item>
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 10px;">
+                <ion-label style="font-size: 13px;">Add Task </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card style="margin-left: 200px; margin-top: -175px;">
+        <ion-card-content routerLink="/home/tabs/calendar">
+
+            <ion-item lines="none" style="--background:transparent; margin-top: 0px;">
+                <ion-icon style="margin-left: 15px; margin-top: 10px; font-size: 40px;" name="calendar-outline"></ion-icon>
+            </ion-item>
+            <ion-item detail="false" lines="none" style="--background:transparent; margin-top: 10px;">
+                <ion-label style="font-size: 13px;">Calendar </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+
+
+
+</ion-content>

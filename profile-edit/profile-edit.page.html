@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+
+    <ion-item lines="none">
+        <ion-back-button style="color: grey;" defaultHref="/home/tabs/profile"></ion-back-button>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label style="text-align: center; letter-spacing: 0.2ex; font-weight: 200; font-size:23px; color:#CECECE; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Edit Profile</ion-label>
+    </ion-item>
+    <ion-avatar>
+        <img [src]="user.photoURL">
+    </ion-avatar>
+
+    <ion-card>
+
+        <ion-card-content>
+
+
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input [(ngModel)]="name" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
+            </ion-item>
+
+        </ion-card-content>
+
+        <ion-button style="margin-top: 60px; font-size: 17px; letter-spacing: 0.2ex; font-weight: 200;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;width: 50%; margin-left: 70px; --background:transparent; border: 0.5px solid white; border-radius: 30px;"
+            expand="block" shape="round" (click)="updateProfile()">UPDATE
+        </ion-button>
+
+
+    </ion-card>
+</ion-content>

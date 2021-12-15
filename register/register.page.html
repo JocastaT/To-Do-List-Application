@@ -1,0 +1,61 @@
+<ion-content class="ion-padding">
+    <div class="register-section ion-padding">
+        <div class="heading ion-padding">
+            <h2>Register</h2>
+            <h1>Create an account</h1>
+            <p>Sign up to start tasking</p>
+        </div>
+
+        <div class="register-form ion-padding">
+            <div class="form-input">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-item style="--background: #DFDBD8; ">
+                    <ion-label position="floating" style="color: #989898;">Enter Your Name</ion-label>
+                    <ion-input [(ngModel)]="name" type="text" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+
+                </ion-item>
+            </div>
+
+            <div class="form-input">
+                <ion-icon name="mail-outline"></ion-icon>
+                <ion-item style="--background: #DFDBD8; margin-top: -10px; ">
+                    <ion-label position="floating" style="color: #989898;">Enter a valid Email</ion-label>
+                    <ion-input [(ngModel)]="email" type="text" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+
+                </ion-item>
+            </div>
+
+            <div class="form-input">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-item style="--background: #DFDBD8; ">
+                    <ion-label position="floating" style="color: #989898;">Create a Password</ion-label>
+                    <ion-input [(ngModel)]="password" type="password" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+
+                </ion-item>
+            </div>
+
+            <div class="form-input">
+                <ion-icon name="lock-closed"></ion-icon>
+                <ion-item style="--background: #DFDBD8; ">
+                    <ion-label position="floating" style="color: #989898;">Confirm Password</ion-label>
+                    <ion-input [(ngModel)]="confirmPassword" type="password" (ionChange)="checkPassword()" style="color: #251B1B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></ion-input>
+                    <p style="margin-top: -10px; margin-left: 30px; color:#c0c0c0">_______________________________</p>
+
+                    <ion-text *ngIf="password && !passwordMatch" color="danger">Password do not match!</ion-text>
+                    <ion-text *ngIf="password && passwordMatch" color="success">Password match!</ion-text>
+                </ion-item>
+            </div>
+        </div>
+
+        <div class="action-button ion-padding">
+            <ion-button [disabled]='!passwordMatch' expand="block" shape="round" style=" color: #1F1010; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 200; letter-spacing: 1.5px;"
+                (click)="register()">Register
+            </ion-button>
+            <p class="loginbtn" style="font-size: 12px;">Already have an Account? <a (click)="login()">Login Now!</a></p>
+
+        </div>
+    </div>
+</ion-content>

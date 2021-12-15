@@ -1,0 +1,20 @@
+<ion-list>
+    <ion-list-header>SORT TASK
+    </ion-list-header>
+    <ion-item button *ngFor="let item of list" (click)="dismiss(item)">
+        {{item}}
+    </ion-item>
+
+    <ion-item line="none" detail="false" button (click)="sortAlphabetically()">Alphabetically </ion-item>
+    <ion-item line="none" detail="false" button (click)="sortDate1()">
+        Newest to Oldest
+    </ion-item>
+    <ion-item line="none" detail="false" button (click)="sortDate2()">
+        Oldest to Newest
+    </ion-item>
+    <ion-item line="none" detail="false" button (click)="priority()">
+        Priority
+    </ion-item>
+
+
+</ion-list>

@@ -1,0 +1,53 @@
+ion-header {
+    background: black;
+}
+
+ion-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.3ex;
+    font-weight: 200;
+    font-size: 17px;
+}
+
+ion-select {
+    width: 100%;
+    justify-content: left;
+}
+
+ion-label {
+    width: 20%;
+    justify-content: left;
+}
+
+ion-menu-button {
+    color: #5C5553;
+}
+
+ion-content {
+    --background: #EBEBEB;
+}
+
+ion-card {
+    --background: white;
+}
+
+ion-row {
+    left: 0;
+    right: 0;
+    top: 30%;
+    transform: translateY(-30%);
+    margin-top: 10px;
+    ion-item {
+        p {
+            font-size: 15px;
+            line-height: 22px;
+            color: rgb(161, 178, 209);
+            margin-left: 3px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        ion-icon {
+            font-size: 17px;
+            color: rgb(161, 178, 209);
+        }
+    }
+}

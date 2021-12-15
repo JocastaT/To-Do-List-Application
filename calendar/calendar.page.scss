@@ -1,0 +1,9 @@
+.monthview-selected {
+    font-weight: bold;
+    background-color: #F1F1F1 !important;
+    color: #333 !important;
+}
+
+ion-content {
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/assets/calendar1.png") no-repeat center center / cover;
+}
